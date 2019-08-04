@@ -424,7 +424,7 @@ class Packages extends Component {
 
             <Fade bottom>
               <div className={'pricing-body'}>
-                <Header as='h2' textAlign='left' style={ mobile && { fontSize: '24px' }}>
+                <Header as='h2' textAlign='left' style={ mobile ? { fontSize: '24px' } : null}>
                   Combo Packages
                 </Header>
 
