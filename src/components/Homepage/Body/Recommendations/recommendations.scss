@@ -1,0 +1,196 @@
+@import '../../../../partials/variables';
+
+.ui.grid.recommendations-container {
+  padding-top: 80px !important;
+  position: relative;
+  // background-color: lighten($color-accent, 15%);
+
+  .section-header::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 4px;
+    background: black;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  svg {
+    position: absolute;
+    height: 150%;
+    top: -38vh;
+    padding: 0;
+    width: 100%;
+  }
+
+  @media (min-width: 1280px) {
+
+    svg {
+      top: -54vh;
+    }
+  }
+
+  > .sixteen.wide.column { 
+    margin-bottom: 150px !important;
+  }
+
+  @media (max-width: 767px) {
+    .padded-container {
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  .padded-container {
+    position: relative;
+
+    .blocker {
+      width: 7%; 
+      height: 100%; 
+      position: absolute;  
+      top: 0; 
+      z-index: 0; 
+      background-color: white;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+
+    .recommendation-body {
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;    
+      margin: 1.5em 0;
+      text-align: left;
+    }
+
+  }
+
+  @media only screen and (max-width: 991px) and (min-width: 768px) {
+    // .ui.container {
+    //   width: 821px;
+    // }
+  }
+
+  .slick-next:before, .slick-prev:before {
+    color: black;
+  }
+
+  .slick-prev, .slick-next {
+    font-size: 15px !important;
+  }
+  
+   .slick-prev:before, .slick-next:before  {
+    content: '' !important;
+  }
+
+  .slick-arrow {
+    display: inline-block; 
+    position: absolute;
+    z-index: 1; 
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(51,107,196,0.16);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(35,43,48,0.06);
+    z-index: 1;
+    padding-top: 15px;
+    transition: .3s;
+
+    &.right-arrow { 
+      right: 0; 
+      top: 50%;
+      padding-left: 13px;
+      transform: translateY(-50%);
+    }
+
+    &.left-arrow {
+      left: 0;
+      top: 50%;
+      padding-left: 10px;
+      transform: translateY(-50%);
+    }
+  }
+
+  .slick-slider {
+
+    @media (min-width: 1000px) {
+
+      .slick-track {
+        height: 400px;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 999px) {
+
+      .slick-track {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .slick-track {
+        height: 400px;
+      }
+    }
+    
+    .slick-track {
+      padding-top: 2.5em;
+    }
+
+    .slick-slide {
+      transition: 0.2s ease;
+      opacity: .3;
+      padding-left: 2em;
+      padding-right: 2em;
+
+      &.slick-center {
+        line-height: 27px;
+        margin-top: -1em;
+        opacity: 1;
+        padding-left: 0;
+        padding-right: 0;
+
+        .ui.segment {
+          font-size: 1.2em;
+          padding-right: 0;
+          padding-left: 0;
+          z-index: 3;
+          border-radius: 5px;
+          background: #fff;
+          border: 2px solid rgba(0,0,0,0.03);
+          box-shadow: 2px 4px 9px 1px rgba(0,0,0,0.15), 0 1px 1px rgba(0,0,0,0.15);
+          padding: 1.5em;
+        }
+
+        @media (min-width: 768px) {
+          
+          .ui.segment {
+            width: 160% !important;
+            margin-left: -30%;
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+.review-modal.modal.large {
+  padding: 1.5em;
+
+  p {
+    margin-top: 2em;
+    text-align: center;
+  }
+}

@@ -1,0 +1,76 @@
+@import '../../../partials/variables';
+
+.nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  padding: 1em 2em;
+  text-align: right;
+  transition: .4s ease;
+  z-index: 3;
+  background-color: white;
+
+  .ui.list.link {
+    
+    a.item {
+      color: $color-primary !important;
+      font-weight: 500;
+      padding: 11px;
+
+      &.active {
+
+        a {
+          font-weight: 800;
+        }
+      }
+    }
+  }
+
+  
+
+  .ui.mobile-navitems {
+
+    .icon {
+      cursor: pointer;
+      color: $color-primary;
+    }
+  }
+
+  &.fixed-nav {
+    position: fixed;
+  }
+
+  .logo {
+    position: absolute; 
+    width: 50px; 
+    height: 40px; 
+    left: 20px; 
+    top: 20px; 
+    background-color: blue;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 30px 1em;
+    padding-right: 1em;
+    text-align: left;
+
+    .item {
+
+        a {
+        color: $color-secondary !important;
+        font-weight: 500;
+      }
+
+      &.active {
+
+        a {
+          font-weight: 800;
+        }
+      }
+    }
+    
+  }
+}

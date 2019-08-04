@@ -1,0 +1,123 @@
+@import '../../../../partials/variables';
+
+.home-container {
+
+  .illustration-banner {
+    right: -10%;
+    position: absolute;
+    left: unset;
+    width: 50vw;
+    height: 108%;
+    top: 7em;
+  }
+
+  .home-illustration {
+    height: 100%;
+    width: 83%;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background: no-repeat left top;
+    background-size: contain;
+  }
+
+  .home-icon img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .ui.header {
+    font-size: 45px;
+    letter-spacing: .5px;
+  }
+
+  .home-content-container {
+    margin-top: 100%; 
+    height: 50%;
+
+    .header {
+
+      div.Typist {
+        font-family: $font-family-header;
+        margin-top: -30px;
+      }
+
+      &:not(.mobile-only) {
+
+        &::after {
+          content: '';
+          display: block;
+          width: 24px;
+          height: 4px;
+          background: #444;
+          margin-top: 16px;
+        }
+      }
+    }
+
+    .header-content p {
+      font-size: 18px;
+      line-height: 1.5em;
+      margin: 2em 0 1.5em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    
+    .home-content-container {
+      margin-top: 27vh;
+    }
+  }
+
+  @media (max-width: 767px) {
+    
+    .home-content-container {
+      margin-top: 18vh;
+    }
+  }
+
+  .back-to-top {
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(130, 130, 130);
+    color: white;
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    border-radius: 50%;
+    bottom: 50px;
+    left: 50%;
+    animation: bounce 0.8s linear;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    backface-visibility: hidden;
+
+    i {
+      line-height: 30px;
+      margin-top: 3px;
+      margin-left: 5px;
+    }
+  }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(-1px);
+    }
+
+    50% {
+      transform: translateY(1px);
+    }
+
+    100% {
+      transform: translate(0);
+    }
+  }
+
+  .back-to-top:hover {
+    background-color: white;
+    border: 1px solid rgb(130, 130, 130);
+    color: rgb(130, 130, 130);
+  }
+}

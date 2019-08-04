@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.scss'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import 'semantic-ui-css/semantic.min.css'
+import Homepage from './components/Homepage/homepage'
+import Payment from './components/Payment/payment'
+import ErrorPage from './components/ErrorPage/errorpage'
+import Transactions from './components/Transactions/transactions'
+import VerifyPage from './components/VerifyPage/verifypage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+ 
+  render () {
+    
+    return (
+      <div className={'body'}>
+
+        <Router basename={'/'}>
+          <Switch>
+            <Route exact path={'/'} component={Homepage} />
+            <Route path={'/payment/:activePackage'} component={Payment} />
+            <Route path={'/payment'} component={Payment} />
+            <Route path={'/transactions'} component={Transactions} />
+            <Route path={'/verify/:reference'} component={VerifyPage} />
+            <Route component={ErrorPage} />
+          </Switch>
+        </Router>
+        
+      </div>
+    )
+  }
 }
 
 export default App;

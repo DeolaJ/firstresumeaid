@@ -1,0 +1,231 @@
+@import '../../../../partials/variables';
+
+.packages-container {
+  padding-top: 110px !important;
+  position: relative;
+  padding-bottom: 140px !important;
+  clip-path: polygon(6% 0%, 100% 0%, 100% 92%, 94% 100%, 0% 100%, 0% 8%);
+
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: .25;
+  }
+
+  .section-header::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 4px;
+    background: black;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ui.segments {
+    margin-top: 50px; 
+    box-shadow: none;
+    border: none;
+
+    .ui.segment {
+      padding: 1em 4em;
+      margin-bottom: 2em;
+
+      h3 {
+        margin-bottom: 1em;
+        width: 70px;
+      }
+
+      p {
+        line-height: 24px;
+        font-size: 16px;
+        color: #777;
+      }
+
+      .package-icon {
+        margin: 8px auto;
+      }
+    }
+
+    @media (min-width: 768px) {
+      > .ui.segment {
+        width: 50%;
+        display: inline-block;
+        
+        &:nth-child(2n) {
+          border-left: 2px solid;
+          border-image: radial-gradient(rgba(0,0,0,0.08),transparent) .5;
+        }
+
+        &:last-child {
+          margin-left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      > .ui.segment {
+        width: 100%;
+        display: block;
+      }
+    }
+    
+  }
+
+  .pricing-body {
+    margin-top: 5em;
+    margin-bottom: 2em;
+
+    @media (min-width: 475px) and (max-width: 767px) {
+
+      > .header {
+        text-align: center !important;
+      }
+    }
+  }
+
+  .ui.cards.package-cards {
+    margin-top: 30px; 
+    align-items: flex-start;
+
+    &:not(.mobile) {
+
+      &.individual {
+
+        .ui.card:nth-child(2) {
+          div.header {
+            color: white; 
+          }
+        }
+      }
+
+      .ui.card {
+        position: relative;
+
+        .ui.statistic>.value, .ui.statistics .statistic>.value  {
+          font-family: $font-family-header;
+        }
+
+        .ui.statistic .label {
+          font-weight: 400;
+        }  
+
+        div.header {
+          color: $color-grey; 
+          line-height: 30px; 
+          position: relative;
+          font-weight: 400;
+          letter-spacing: .2px;
+        }
+  
+        .background-placeholder {
+          height: 60px; 
+          width: 100%; 
+          top: 0; 
+          left: 0; 
+          position: absolute;
+  
+          &.red {
+            background-color: $color-paint;
+          }
+  
+          &.orange {
+            background-color: $color-primary;
+          }
+  
+          &.blue {
+            background-color: $color-paint;
+          }
+  
+          &.popular {
+            height: 100px; 
+            top: -40px;
+  
+            .label {
+              top: .1em; 
+              left: -1.2em;
+            }
+          }
+        }
+  
+        .content.extra {
+          padding-top: 2em;
+          padding-bottom: 2em;
+        }
+      }
+    }
+
+    &.mobile {
+
+      .ui.card {
+        position: relative;
+        border-radius: 5px; 
+        background-color: lightblue;
+        max-width: 100%;
+        margin-bottom: 2em;
+        margin-left: auto;
+        margin-right: auto;
+
+        .ui.statistic>.value, .ui.statistics .statistic>.value  {
+          font-family: $font-family-header;
+          font-size: 2.5rem !important;
+        }
+
+        .ui.statistic .label {
+          font-weight: 400;
+        }  
+  
+        .card-header_mobile {
+          color: white; 
+          border: 2px solid white; 
+          width: 70%; 
+          margin: 1.5em auto 0; 
+          border-radius: 5px !important; 
+          border-top: 2px solid white !important;
+        }
+
+        .card-content_mobile {
+          border: none; 
+          margin: .5em auto;
+        }
+        
+        .popular {
+          width: 100%; 
+          left: 0; 
+          position: absolute;
+          top: 2em;
+  
+          .ui.ribbon.label {
+            top: .1em; 
+            left: -1.2em;
+            padding-left: 1.5em;
+            padding-right: .5em;
+          }
+        }
+  
+        .content.extra {
+          border-top: none !important; 
+          padding-top: 0em; 
+          padding-bottom: 1.5em;
+        }
+      }
+
+      @media (min-width: 475px) {
+
+        .ui.card {
+          max-width: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .packages-container {
+    clip-path: none;
+  }
+}

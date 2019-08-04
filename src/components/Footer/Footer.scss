@@ -1,0 +1,17 @@
+@import '../../partials/variables';
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: transparent;
+  padding: 30px 0;
+  color: white;
+  text-align: center;
+  background-color: $color-grey;
+  width: 100%;
+
+  div {
+    display: inline-block;
+  }
+}
