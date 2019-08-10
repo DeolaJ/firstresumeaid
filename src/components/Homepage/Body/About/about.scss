@@ -31,6 +31,81 @@
     }
   }
 
+  .perks-column {
+    position: relative;
+    margin-top: 6em;
+
+    .perks-container.ui.grid {
+      margin: 0;
+      padding: 2.5em;
+  
+      h2.header {
+        font-size: 30px;
+        margin-bottom: 1em;
+        color: #111;
+      }
+
+      .row {
+        border-radius: 10px;
+        background: #ffcf99;
+        padding: 2.5em;
+      }
+  
+      p {
+        margin-bottom: 2.5em;
+        position: relative;
+        color: #111;
+  
+        &::before {
+          content: '';
+          position: absolute;
+          width: 15px;
+          border-radius: 50%;
+          height: 15px;
+          background-color: #333;
+          left: -1.5em;
+          top: 5px;
+        }
+      }
+        
+      .perk-illustration {
+        height: 80%;
+        margin-top: 10%;
+        width: 83%;
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        background: no-repeat left top;
+        background-size: contain;
+      }
+    }
+
+    @media (max-width: 1000px) {
+
+      &.column { 
+        background-color: #f2f2f2;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .perk-illustration {
+        display: none;
+      }
+
+      .header {
+        text-align: center;
+      }
+
+      .eight.wide.column {
+        padding: 0 5em !important;
+      }
+    }
+
+  }
+
+
   .ui.container.about-content {
 
     .ui.raised.segment {

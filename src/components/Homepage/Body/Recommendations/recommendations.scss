@@ -188,9 +188,37 @@
 
 .review-modal.modal.large {
   padding: 1.5em;
+  height: 80%;
 
   p {
     margin-top: 2em;
-    text-align: center;
+    text-align: left;
+    padding: 0 3em;
+    line-height: 45px;
+    font-size: 28px;
+  }
+
+  @media (max-width: 992px) {
+
+    &.basic {
+      height: 60%;
+    }
+
+    p {
+      padding: 0 1em;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    &.basic {
+      height: 80%;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 35px;
+    }
   }
 }

@@ -228,7 +228,7 @@ class CheckoutForm extends Component {
   
     switch(fieldName) {
       case 'email':
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var re = /^\s*(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))\s*$/;
         emailValid = re.test(String(value).toLowerCase());
         // emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
         break;
@@ -258,8 +258,8 @@ class CheckoutForm extends Component {
       <Aux>
         <Form>
           <Form.Group style={{ marginBottom: '0' }}>
-            <Form.Input width={8} label={"First name"} value={first_name} name="first_name" placeholder='Enter your first name' onChange={this.handleChange} />
-            <Form.Input width={8} label={"Last name"} value={last_name} name="last_name" placeholder='Enter your last name' onChange={this.handleChange} />
+            <Form.Input width={8} required label={"First name"} value={first_name} name="first_name" placeholder='Enter your first name' onChange={this.handleChange} />
+            <Form.Input width={8} required label={"Last name"} value={last_name} name="last_name" placeholder='Enter your last name' onChange={this.handleChange} />
           </Form.Group>
           <Form.Input id={'email'} required label={"Email address"} value={email} name="email" placeholder='Enter your email address' onChange={this.handleChange} />
           <Message
@@ -270,12 +270,12 @@ class CheckoutForm extends Component {
             <p>Email address is invalid</p>
           </Message>
           <Form.Field>
-            <label>House Address</label>
+            <label>House Address (OPTIONAL)</label>
             <TextArea placeholder='Enter your Home Address' value={address} name="address" rows={2} onChange={this.handleChange}></TextArea>
           </Form.Field>
           <Form.Input label={"Name of Consultant"} placeholder={"Enter the consultant's name"} name="consultant" value={consultant} onChange={this.handleChange} />
           <Form.Field>
-            <label>Brief Description of service</label>
+            <label>Brief Description of service (OPTIONAL)</label>
             <TextArea placeholder='Enter a brief description of your request' value={description} rows={2} name="description" onChange={this.handleChange}></TextArea>
           </Form.Field>
           {

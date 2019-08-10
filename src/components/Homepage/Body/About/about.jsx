@@ -3,9 +3,12 @@ import { Grid, Container, Header, Segment, Feed, Icon } from 'semantic-ui-react'
 import './about.scss'
 import Fade from 'react-reveal/Fade';
 import Aux from '../../../../hoc/Aux'
+import manIconTab from '../../../../images/man500.png'
 import contract from '../../../../images/icons/003-contract.svg'
 import insurance from '../../../../images/icons/004-insurance.svg'
 import team from '../../../../images/icons/014-team.svg'
+import wavyFlat from '../../../../images/background/wavy flat.svg'
+
 
 class About extends Component {
   state = {
@@ -160,6 +163,35 @@ class About extends Component {
               </Feed>
             </Container>
           </Fade>
+        </Grid.Column>
+
+        <Grid.Column width={16} className={'perks-column'}>
+          <Grid stackable className={'perks-container'}>
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <div className={'perk-illustration'} style={{ backgroundImage: `url(${manIconTab})`}}></div>
+              </Grid.Column>
+              <Grid.Column width={8}>
+                <div>
+                  <Header as='h2'>
+                    Perks
+                  </Header>
+                  <p>
+                    Radically improve job seekers chances of successfully getting past the application stage to the interview phase of the hiring process
+                  </p>
+                  <p>
+                    Craft Resumes and cover letters to strategically market clients for their desired career objectives
+                  </p>
+                  <p>
+                    Rework LinkedIn Profiles into engaging and highly competitive self-selling tool, increasing the chances of getting hired by at least 63.5%
+                  </p>
+                  <p>
+                    Work one-on-one with professionals seeking achievement-based career marketing packages that strategically promotes their strengths and highlights their successes
+                  </p>
+                </div>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </Grid.Column>
       </Grid>
     )

@@ -441,7 +441,7 @@ class Packages extends Component {
                       </Card.Content>
                       <Card.Content textAlign='center'>
                         <Statistic horizontal>
-                          <Statistic.Value>$579.85 $560</Statistic.Value>
+                          <Statistic.Value><span className={'level-cut'}>$579.85</span> $560</Statistic.Value>
                           <Statistic.Label>/per doc</Statistic.Label>
                         </Statistic>
                       </Card.Content>
@@ -451,7 +451,9 @@ class Packages extends Component {
                         </Segment>
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
-                        <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        <Link to='/payment/professional-level-combo'>
+                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        </Link>
                       </Card.Content>
                     </Card>
                     <Card>
@@ -462,7 +464,7 @@ class Packages extends Component {
                       </Card.Content>
                       <Card.Content textAlign='center'>
                         <Statistic horizontal>
-                          <Statistic.Value>$609.85 $580</Statistic.Value>
+                          <Statistic.Value><span className={'level-cut'}>$609.85</span> $580</Statistic.Value>
                           <Statistic.Label>/per doc</Statistic.Label>
                         </Statistic>
                       </Card.Content>
@@ -472,7 +474,9 @@ class Packages extends Component {
                         </Segment>
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
-                        <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        <Link to='/payment/it-level-combo'>
+                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        </Link>
                       </Card.Content>
                     </Card>
                     <Card>
@@ -483,7 +487,7 @@ class Packages extends Component {
                       </Card.Content>
                       <Card.Content textAlign='center'>
                         <Statistic horizontal>
-                          <Statistic.Value>$629 $600</Statistic.Value>
+                          <Statistic.Value><span className={'level-cut'}>$629</span> $600</Statistic.Value>
                           <Statistic.Label>/per doc</Statistic.Label>
                         </Statistic>
                       </Card.Content>
@@ -495,7 +499,9 @@ class Packages extends Component {
                         </Segment>
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
-                        <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        <Link to='/payment/executive-level-combo'>
+                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        </Link>
                       </Card.Content>
                     </Card>
                   </Card.Group>
@@ -508,7 +514,7 @@ class Packages extends Component {
                         <Header as='h3'>Professional Level Combo</Header>
                         <Card.Meta>
                           <Statistic horizontal>
-                            <Statistic.Value>$579.85 $560</Statistic.Value>
+                            <Statistic.Value><span className={'level-cut'}>$579.85</span> $560</Statistic.Value>
                             <Statistic.Label>/per doc</Statistic.Label>
                           </Statistic>
                         </Card.Meta>
@@ -521,7 +527,9 @@ class Packages extends Component {
                         </Segment>
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
-                        <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        <Link to='/payment/professional-level-combo'>
+                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        </Link>
                       </Card.Content>
                     </Card>
                     <Card>
@@ -529,7 +537,7 @@ class Packages extends Component {
                         <Header as='h3'>IT Level Combo</Header>
                         <Card.Meta>
                           <Statistic horizontal>
-                            <Statistic.Value>$609.85 $580</Statistic.Value>
+                            <Statistic.Value><span className={'level-cut'}>$609.85</span> $580</Statistic.Value>
                             <Statistic.Label>/per doc</Statistic.Label>
                           </Statistic>
                         </Card.Meta>
@@ -542,7 +550,9 @@ class Packages extends Component {
                         </Segment>
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
-                        <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        <Link to='/payment/it-level-combo'>
+                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        </Link>
                       </Card.Content>
                     </Card>
                     <Card>
@@ -550,7 +560,7 @@ class Packages extends Component {
                         <Header as='h3'>Executive Level Combo</Header>
                         <Card.Meta>
                           <Statistic horizontal>
-                            <Statistic.Value>$629 $600</Statistic.Value>
+                            <Statistic.Value><span className={'level-cut'}>$629</span> $600</Statistic.Value>
                             <Statistic.Label>/per doc</Statistic.Label>
                           </Statistic>
                         </Card.Meta>
@@ -563,7 +573,9 @@ class Packages extends Component {
                         </Segment>
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
-                        <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        <Link to='/payment/executive-level-combo'>
+                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                        </Link>
                       </Card.Content>
                     </Card>
                   </Card.Group>

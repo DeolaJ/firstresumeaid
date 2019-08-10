@@ -52,6 +52,21 @@ class Payment extends PureComponent {
           text: 'Executive biography add-on',
           value: 'Executive biography add-on'
         },
+        {
+          id: 'professional-level-combo',
+          text: 'Professional Level Combo',
+          value: 'Professional Level Combo'
+        },
+        {
+          id: 'it-level-combo',
+          text: 'IT Level Combo',
+          value: 'IT Level Combo'
+        },
+        {
+          id: 'executive-level-combo',
+          text: 'Executive Level Combo',
+          value: 'Executive Level Combo'
+        },
       ]
     }
   }
@@ -149,6 +164,9 @@ class Payment extends PureComponent {
       'Executive level': '299.95',
       'LinkedIn profile add-on': '149.95',
       'Executive biography add-on': '179.95',
+      'Professional Level Combo': '560',
+      'IT Level Combo': '580',
+      'Executive Level Combo': '600'
     }
 
     const { stageOne, stageTwoDesk, stageTwoMobile, activePackage, mobile, resumeOptions, stageThree } = this.state
@@ -160,7 +178,7 @@ class Payment extends PureComponent {
     return (
       <Grid className={'payment-container'}>
 
-        <Step.Group className={'payment-steps unstackable'} style={( stageTwoDesk) ? { transform: 'translateX(-50%)', left: '50%', top: '3em', marginLeft: '-.5em', width: 'calc(100% - 4em)' } : ((stageTwoMobile || mobile )? { width: '100%', transform: 'translateX(-50%)', left: '50%', top: '5.6em' } : null)} widths={3}>
+        {/* <Step.Group className={'payment-steps unstackable'} style={( stageTwoDesk) ? { transform: 'translateX(-50%)', left: '50%', top: '3em', marginLeft: '-.5em', width: 'calc(100% - 4em)' } : ((stageTwoMobile || mobile )? { width: '100%', transform: 'translateX(-50%)', left: '50%', top: '5.6em' } : null)} widths={3}>
           <Step active={stageOne} completed={stageTwoDesk || stageTwoMobile}>
             <Step.Content>
               <Step.Title>{mobile ? <span>1<br/>Package</span> : '1. Select Package'}</Step.Title>
@@ -176,7 +194,18 @@ class Payment extends PureComponent {
               <Step.Title>{mobile ? <span>3<br/>Pay</span> : '3. Pay'}</Step.Title>
             </Step.Content>
           </Step>
-        </Step.Group>
+        </Step.Group> */}
+        <div className={'step-count'} style={( stageTwoDesk) ? { transform: 'translateX(-50%)', left: '50%', top: '2em', marginLeft: '-.5em', width: 'calc(100% - 30em)' } : ((stageTwoMobile || mobile )? { width: '100%', transform: 'translateX(-50%)', left: '50%', top: '4.5em' } : null)}>
+          <div className={stageOne ? 'active' : ((stageTwoDesk || stageTwoMobile) ? 'completed' : null )}>
+            {mobile ? 'Package' : 'Select Package'}
+          </div>
+          <div className={(stageTwoDesk || stageTwoMobile) ? 'active' : (stageThree ? 'completed' : null )}>
+            {mobile ? 'Info' : 'Personal Information'}
+          </div>
+          <div className={stageThree ? 'active' : null }>
+            {mobile ? 'Pay' : 'Pay'}
+          </div>
+        </div>
         {
           stageOne &&
 

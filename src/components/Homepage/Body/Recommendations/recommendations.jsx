@@ -65,12 +65,14 @@ class Recommendations extends Component {
   }
 
   handleOpen = () => {
-    const modalContent = document.querySelector('.slick-slider .slick-active.slick-center p').cloneNode(true)
+    const modalContent = document.querySelector('.slick-slider .slick-active.slick-center.slick-current p').textContent
+    const content = document.createElement('p')
+    content.textContent = modalContent
     this.setState({ modalOpen: true })
     setTimeout(() => {
       const modal = document.querySelector('.modal.review-modal')
-      modal.appendChild(modalContent)
-    }, 100)
+      modal.appendChild(content)
+    }, 1000)
   }
 
   handleClose = () => {

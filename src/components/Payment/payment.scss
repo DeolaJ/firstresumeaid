@@ -15,6 +15,83 @@
   //   background-color: rgba(0, 0, 0, .2);
   // }
 
+  .step-count {
+    display: flex;
+    position: absolute;
+    padding: .5em 0;
+    border-radius: 5px;
+    width: 70%;
+    z-index: 3;
+    right: 2em;
+    margin: 0 auto;
+    background: ghostwhite;
+    top: 3em;
+    border: none;
+
+    div {
+      padding-top: 30px;
+      position: relative;
+      width: 100%;
+      text-align: center;
+
+      &::after {
+        content: '';
+        background-color: #aaa;
+        width: 100%;
+        height: 1.5px;
+        top: 12px;
+        left: 50%;
+        z-index: -1;
+        position: absolute;
+      }
+
+      &::before {
+        content: '\2713';
+        font-size: 1.5em;
+        font-weight: bolder;
+        padding-top: 3px;
+        position: absolute;
+        height: 26px;
+        color: white;
+        width: 26px;
+        border-radius: 50%;
+        background: #aaa;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &:last-child {
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &.active {
+
+        &::after, &::before {
+          background: darken($color-accent, 10%);
+        }
+      }
+
+      &.completed {
+
+        &::after, &::before {
+          background: $color-primary;
+        }
+      }
+
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .step-count {
+      border-radius: 0;
+    }
+  }
+
   .ui.three.steps.payment-steps {
     position: absolute;
     height: 39px;
