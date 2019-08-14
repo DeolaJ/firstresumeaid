@@ -64,21 +64,21 @@ class Recommendations extends Component {
     })
   }
 
-  handleOpen = () => {
-    const modalContent = document.querySelector('.slick-slider .slick-active.slick-center.slick-current p').textContent
-    const content = document.createElement('p')
-    content.textContent = modalContent
+  handleOpen = (content, name) => () => {
     this.setState({ modalOpen: true })
     setTimeout(() => {
-      const modal = document.querySelector('.modal.review-modal')
-      modal.appendChild(content)
-    }, 1000)
+      const modalContent = document.createElement('p')
+      const header = document.createElement('h2')
+      header.textContent = name
+      modalContent.textContent = content
+      const modal = document.createDocumentFragment()
+      modal.appendChild(modalContent)
+      modal.appendChild(header)
+      document.querySelector('.modal.review-modal').appendChild(modal)
+    }, 50)
   }
 
   handleClose = () => {
-    const modalContent = document.querySelector('.review-modal p')
-    const modal = document.querySelector('.modal.review-modal')
-    modal.removeChild(modalContent)
     this.setState({ modalOpen: false })
   }
 
@@ -164,13 +164,12 @@ class Recommendations extends Component {
                   testimonials.map((review) => (
                     <Segment key={review.id} basic>
                       <Header as='h3'>
-                        Image
                         <Header.Subheader>{review.name}</Header.Subheader>
                       </Header>
                       <p className={'recommendation-body'} style={{ WebkitBoxOrient: 'vertical' }}>
                         {review.body}
                       </p>
-                      <Button className={'primary-sub'} style={{ display: 'none' }} size='small' onClick={this.handleOpen}>Read More</Button>
+                      <Button className={'primary-sub'} style={{ display: 'none' }} size='small' onClick={this.handleOpen(review.body, review.name)}>Read More</Button>
                     </Segment>
                   ))
                 }
@@ -182,7 +181,6 @@ class Recommendations extends Component {
           <Modal
             open={this.state.modalOpen}
             onClose={this.handleClose}
-            basic
             size='large'
             closeIcon
             ref={this.modal}

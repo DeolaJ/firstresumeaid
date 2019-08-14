@@ -72,42 +72,36 @@ class Samples extends Component {
           image: 'iio',
           name: 'Sample 1',
           url: doc
-          // body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
         },
         {
           id: 2,
           image: 'kkjj',
           name: 'Sample 2',
           url: doc
-          // body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
         },
         {
           id: 3,
           image: 'jjknk',
           name: 'Sample 3',
           url: doc
-          // body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
         },
         {
           id: 4,
           image: 'mmkk',
           name: 'Sample 4',
           url: doc
-          // body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
         },
         {
           id: 5,
           image: 'jj',
           name: 'Sample 5',
           url: doc
-          // body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
         },
         {
           id: 6,
           image: 'jj',
           name: 'Sample 6',
           url: doc
-          // body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit'
         }
       ]
     }
@@ -117,22 +111,24 @@ class Samples extends Component {
     this.handleClose = this.handleClose.bind(this)
   }
 
-  componentDidMount () {
-  }
-
-  
-
   handleOpen = (url) => () => {
     this.setState({ modalOpen: true })
-    setTimeout(() => {
-      const iframe = document.querySelector('.sample-modal embed')
-      iframe.setAttribute('src', url);
-    }, 100)
+    if (!this.state.mobile) {
+      setTimeout(() => {
+        const iframe = document.createElement('embed')
+        iframe.style.width = '100%'
+        iframe.style.height = '100%'
+        iframe.setAttribute('src', url);
+        document.querySelector('.sample-modal').appendChild(iframe)
+      }, 100)
+    } else {
+      const doc = document.createElement('a')
+      doc.href = url
+      doc.setAttribute('target', '_blank')
+    }
   }
 
   handleClose = () => {
-    const iframe = document.querySelector('.modal iframe')
-    iframe.setAttribute('src', null);
     this.setState({ modalOpen: false })
   }
 
@@ -197,8 +193,18 @@ class Samples extends Component {
                                 {sample.body} 
                               </Card.Description> */}
                               <br/>
-                              <Button fluid color='blue' className={'primary-sub'} onClick={this.handleOpen(sample.url)}>Preview</Button>
-                              {/* <Button fluid color='blue' className={'primary-main'}>Request</Button> */}
+                              {
+                                mobile ?
+
+                                <a href={sample.url} target="_blank" rel="noopener noreferrer" disabled={mobile ? false : true}>
+                                  <Button fluid color='blue' className={'primary-sub'}>Preview</Button>
+                                </a>
+
+                                :
+
+                                <Button fluid color='blue' className={'primary-sub'} onClick={this.handleOpen(sample.url)}>Preview</Button>
+                              }
+                              
                             </Card.Content>
                           </Card>
                         ))
@@ -218,7 +224,7 @@ class Samples extends Component {
             closeIcon
             className={'sample-modal'}
             >
-             <embed src={null} width="800px" height="2100px" />
+             
           </Modal>
         </Grid.Column>
       </Grid>

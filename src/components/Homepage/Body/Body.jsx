@@ -21,6 +21,7 @@ class Body extends Component {
 
   componentDidMount () {
     const body = document.querySelector('.home-container').clientWidth
+    window.addEventListener("resize", this.updateValue)
 
     if (body <= 768 ) {
       this.setState({
@@ -31,6 +32,18 @@ class Body extends Component {
         mobile: false
       })
     }
+  }
+
+  updateValue = () => {
+    const body = document.querySelector('.home-container').clientWidth
+    const mobile = body <= 768 ? true : false
+    this.setState({
+      mobile: mobile
+    })
+  }
+
+  componentWillMount () {
+    window.removeEventListener("resize", this.updateValue)
   }
 
   render () {

@@ -89,3 +89,15 @@
     }
   }
 }
+
+.ui.modal.sample-modal.basic {
+  height: 100%;
+
+  > .close {
+    right: 1rem;
+    font-size: 22px;
+    background: black;
+    padding: 5px;
+    border-radius: 50%;
+  }
+}

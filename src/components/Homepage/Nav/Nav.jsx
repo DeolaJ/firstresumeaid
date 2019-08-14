@@ -81,7 +81,7 @@ class Nav extends Component {
           :
           <Grid className={'mobile-navitems'}>
             <Grid.Row columns={3}>
-              <Grid.Column textAlign='left'>
+              <Grid.Column textAlign='left' verticalAlign='middle'>
                 <Icon onClick={handleSidebar} size='big' name='bars'/>
               </Grid.Column>
 
@@ -91,7 +91,9 @@ class Nav extends Component {
 
               <Grid.Column textAlign='right'>
                 <Link to='/payment'>
-                  <Button className={'primary-main'}>Request</Button>
+                  <Button className={'primary-main icon'}>
+                    <Icon onClick={handleSidebar} size='large' style={{ color: 'white' }} name='location arrow'/>
+                  </Button>
                 </Link>
               </Grid.Column>
             </Grid.Row>
