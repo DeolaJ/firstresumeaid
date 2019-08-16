@@ -21,7 +21,7 @@ class Faq extends Component {
   render() {
 
     return (
-      <Grid stackable className={'faq-container'} style={{minHeight: '100vh'}}>
+      <Grid stackable className={'section faq-container'} style={{minHeight: '100vh'}}>
         <div className={'padded-container'}>
           <Fade bottom cascade>
             <Header as='h2' className={'section-header'} textAlign='center'>

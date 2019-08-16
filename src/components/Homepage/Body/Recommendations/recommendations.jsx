@@ -153,7 +153,7 @@ class Recommendations extends Component {
     ]
 
     return (
-      <Grid stackable className={'recommendations-container'} style={{minHeight: '50vh'}}>
+      <Grid stackable className={'section recommendations-container'} style={{minHeight: '50vh'}}>
         <svg xmlns="http://www.w3.org/2000/svg" width="1299" height="1042.18" viewBox="0 0 1299 1042.18"><title>wavy flat</title><path d="M.5,189.5s344,151,821,0l477-151v1041H.5Z" transform="translate(0 -37.82)" fill="#fff" stroke="none" strokeMiterlimit="10"/></svg>
         <Grid.Column width={16}>
           <div className={'padded-container'}>

@@ -21,11 +21,10 @@ class Home extends Component {
     const { mobile } = this.props
 
     return (
-      <Grid stackable className={'home-container'} style={{minHeight: '100vh'}}>
+      <Grid stackable className={'section home-container'} style={{minHeight: '100vh'}}>
 
         <div className={'illustration-banner hide-on-mobile'}>
           <div className={'home-illustration'} style={{ backgroundImage: `url(${homeIcon})`}}>
-            {/* <img src={homeIcon} alt='homepage illustration' style={{ width: '100%' }} /> */}
           </div>
         </div>
         <Grid.Column width={16}>

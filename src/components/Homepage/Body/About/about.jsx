@@ -74,7 +74,7 @@ class About extends Component {
     const { testimonial } = this.state
 
     return (
-      <Grid stackable className={'about-container'} style={{minHeight: '100vh'}}>
+      <Grid stackable className={'section about-container'} style={{minHeight: '100vh'}}>
         <svg xmlns="http://www.w3.org/2000/svg" width="508.4" height="1007.9" viewBox="0 0 508.4 1007.9"><title>arrow right</title><path d="M884.66,35.74A148.58,148.58,0,0,1,990.84,78.55l357.74,352.14a149,149,0,0,1,1.66,210.74L998.1,999.16a148.56,148.56,0,0,1-109.48,44.44" transform="translate(-884.66 -35.73)" fill="#ffc"/></svg>
         <Grid.Column width={1} style={ mobile ? {display: 'none'} : {display: 'block'}}></Grid.Column>
         <Grid.Column width={14} className={'hide-on-mobile'}>

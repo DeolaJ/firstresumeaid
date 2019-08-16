@@ -15,6 +15,11 @@ class Nav extends Component {
 
   componentDidMount () {
     window.addEventListener('scroll', this.handleScroll);
+    const sections = document.querySelectorAll('.mainbody .section')
+
+    this.setState({
+      sections
+    })
   }
 
   componentWillUnmount() {
@@ -22,6 +27,22 @@ class Nav extends Component {
   }
 
   handleScroll(event) {
+    const navLinks = document.querySelectorAll('.navLink a')
+    const { refs } = this.props
+    const { sections } = this.state
+    const refArray = Object.keys(refs)
+    var curPos = window.scrollY
+    refArray.forEach(item => {
+      var sectionItem = Number(item) - 1
+      const section = sections[sectionItem]
+      var top = section.offsetTop - 130,
+          bottom = top + section.clientHeight - 14;
+      if (curPos >= top && curPos < bottom) {
+        navLinks[Number(item) - 1].classList.add('active')
+      } else (
+        navLinks[Number(item) - 1].classList.remove('active')
+      )
+    })
     if ((window.scrollY === 0) && (this.state.scrolling === true)) {
       this.setState({
         scrolling: false
@@ -33,17 +54,16 @@ class Nav extends Component {
     }
   }
 
-  changeActiveState = (item, id) => () => {
-    const { refs } = this.props
-    var items = document.querySelectorAll('.nav .item')
-    items.forEach((oneItem) => {
-      var oneItemText = oneItem.innerText.toLowerCase()
-      oneItem.className = (item === oneItemText) ? `item active ${oneItemText}` : `item ${oneItemText}`
-    })
-    refs[id].current.scrollIntoView({
+
+
+  changeActiveState = (e) => {
+    const { sections } = this.state
+    const id = Number(e.target.id) - 1
+    sections[id].scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     })
+
   }
 
   render () {
@@ -58,13 +78,14 @@ class Nav extends Component {
             <div className={'logo'}>
               Logo
             </div>
-            <List horizontal link>
+            <List horizontal link className={'navLink'}>
               {
                 navItems.map((item) => (
                   <List.Item as='a'
-                    key={item.id} 
+                    key={item.id}
+                    id={item.id}
                     className={item.name ==='Home' ? `active ${item.name.toLowerCase()}` : `${item.name.toLowerCase()}`} 
-                    onClick={this.changeActiveState(item.name.toLowerCase(), item.id)}
+                    onClick={this.changeActiveState}
                     >
                       {item.name}
                   </List.Item>
