@@ -3,6 +3,7 @@ import './Nav.scss'
 import { Icon, List, Grid, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import Aux from '../../../hoc/Aux'
+import logo from '../../../images/logo/logo-full-small.png'
 
 class Nav extends Component {
   constructor (props) {
@@ -14,8 +15,10 @@ class Nav extends Component {
   }
 
   componentDidMount () {
+    const { mobile } = this.props
     window.addEventListener('scroll', this.handleScroll);
-    const sections = document.querySelectorAll('.mainbody .section')
+    
+    const sections = !mobile && document.querySelectorAll('.mainbody .section')
 
     this.setState({
       sections
@@ -27,8 +30,8 @@ class Nav extends Component {
   }
 
   handleScroll(event) {
-    const navLinks = document.querySelectorAll('.navLink a')
-    const { refs } = this.props
+    const { refs, mobile } = this.props
+    const navLinks = mobile ? document.querySelectorAll('.sidebar-menu a') : document.querySelectorAll('.navLink a')
     const { sections } = this.state
     const refArray = Object.keys(refs)
     var curPos = window.scrollY
@@ -76,7 +79,7 @@ class Nav extends Component {
           !mobile ?
           <Aux>
             <div className={'logo'}>
-              Logo
+              <img alt='logo icon' className={'logo-icon'} src={logo} />
             </div>
             <List horizontal link className={'navLink'}>
               {
@@ -106,8 +109,8 @@ class Nav extends Component {
                 <Icon onClick={handleSidebar} size='big' name='bars'/>
               </Grid.Column>
 
-              <Grid.Column textAlign='center' verticalAlign='middle'>
-                Logo
+              <Grid.Column textAlign='center' verticalAlign='middle' style={{ position: 'relative'}}>
+                <img alt='logo icon' className={'mobile-logo'} src={logo} />
               </Grid.Column>
 
               <Grid.Column textAlign='right'>

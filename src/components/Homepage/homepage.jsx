@@ -62,6 +62,7 @@ class Homepage extends Component {
     this.createNavRef(navItems)
 
     const body = document.querySelector('.home-container').clientWidth
+    window.addEventListener("resize", this.updateValue)
 
     if (body <= 768 ) {
       this.setState({
@@ -72,6 +73,18 @@ class Homepage extends Component {
         mobile: false
       })
     }
+  }
+
+  updateValue = () => {
+    const body = document.querySelector('.home-container').clientWidth
+    const mobile = body <= 768 ? true : false
+    this.setState({
+      mobile: mobile
+    })
+  }
+
+  componentWillMount () {
+    window.removeEventListener("resize", this.updateValue)
   }
 
   createNavRef = (arr) => {
@@ -88,9 +101,6 @@ class Homepage extends Component {
   handleSidebar = () =>
   this.setState(prevState => ({ visible: !prevState.visible, navVisible: !prevState.navVisible }))
 
-  // handleDimmedChange = (e, { checked }) => this.setState({ dimmed: checked })
-
-  // handleDirectionChange = direction => () => this.setState({ direction, visible: false })
 
   render () {
     const { refs, navItems, animation, dimmed, direction, visible, mobile, navVisible } = this.state
@@ -98,7 +108,6 @@ class Homepage extends Component {
     return (
       <Aux>
         <Nav navItems={navItems} mobile={mobile} refs={refs} handleSidebar={this.handleSidebar} navVisible={navVisible} />
-        {/* <VerticalSidebar  animation={animation} direction={direction} visible={visible} handleSidebar={this.handleSidebar} /> */}
 
         <Sidebar.Pushable as={Segment} style={{marginTop: '0', border: 'none' }} >
         <VerticalSidebar  refs={refs} animation={animation} direction={direction} visible={visible} handleSidebar={this.handleSidebar} navItems={navItems} />

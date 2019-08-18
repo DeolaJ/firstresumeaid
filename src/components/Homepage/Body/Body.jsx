@@ -11,44 +11,8 @@ import Samples from './Samples/samples'
 
 class Body extends Component {
 
-  constructor (props) {
-    super (props)
-
-    this.state = {
-      mobile: null
-    }
-  }
-
-  componentDidMount () {
-    const body = document.querySelector('.home-container').clientWidth
-    window.addEventListener("resize", this.updateValue)
-
-    if (body <= 768 ) {
-      this.setState({
-        mobile: true
-      })
-    } else if (body > 768) {
-      this.setState({
-        mobile: false
-      })
-    }
-  }
-
-  updateValue = () => {
-    const body = document.querySelector('.home-container').clientWidth
-    const mobile = body <= 768 ? true : false
-    this.setState({
-      mobile: mobile
-    })
-  }
-
-  componentWillMount () {
-    window.removeEventListener("resize", this.updateValue)
-  }
-
   render () {
-    const { mobile } = this.state
-    const { refs, handleSidebar } = this.props
+    const { refs, handleSidebar, mobile } = this.props
 
     return (
       <main className={'mainbody'} onClick={handleSidebar} style={{width: '100%'}}>
