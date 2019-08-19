@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import './Body.scss'
+import LoadableVisibility from "react-loadable-visibility/react-loadable";
+import Loading from "../../../images/loader-doubl.svg";
 import { Grid } from 'semantic-ui-react'
 import Home from './Home/home'
 import About from './About/about'
@@ -8,6 +10,36 @@ import Packages from './Packages/packages'
 import Recommendations from './Recommendations/recommendations'
 import Samples from './Samples/samples'
 // import Contact from './Contact/contact'
+
+const HomeLoadable = LoadableVisibility({
+  loader: () => import("./Home/home"),
+  loading: "Loading"
+});
+
+const AboutLoadable = LoadableVisibility({
+  loader: () => import("./About/about"),
+  loading: "Loading"
+});
+
+const PackagesLoadable = LoadableVisibility({
+  loader: () => import("./Packages/packages"),
+  loading: "Loading"
+});
+
+const SamplesLoadable = LoadableVisibility({
+  loader: () => import("./Samples/samples"),
+  loading: "Loading"
+});
+
+const FaqLoadable = LoadableVisibility({
+  loader: () => import("./FAQs/faq"),
+  loading: "Loading"
+});
+
+const ReviewsLoadable = LoadableVisibility({
+  loader: () => import("./Recommendations/recommendations"),
+  loading: "Loading"
+});
 
 class Body extends Component {
 
