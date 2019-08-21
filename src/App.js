@@ -8,40 +8,41 @@ import 'semantic-ui-css/semantic.min.css'
 // import Transactions from './components/Transactions/transactions'
 // import VerifyPage from './components/VerifyPage/verifypage'
 import Loadable from 'react-loadable';
+import LoaderHome from './components/Loader/loader-home'
 // import Loader from './components/Loader/loader'
 
 const HomepageLoadable = Loadable({
   loader: () => import('./components/Homepage/homepage'),
   loading() {
-    return <div>Loading...</div>
+    return <LoaderHome />
   }
 });
 
 const PaymentLoadable = Loadable({
   loader: () => import('./components/Payment/payment'),
   loading() {
-    return <div>Loading...</div>
+    return <LoaderHome />
   }
 });
 
 const TransactionsLoadable = Loadable({
   loader: () => import('./components/Transactions/transactions'),
   loading() {
-    return <div>Loading...</div>
+    return <LoaderHome />
   }
 });
 
 const VerifyLoadable = Loadable({
   loader: () => import('./components/VerifyPage/verifypage'),
   loading() {
-    return <div>Loading...</div>
+    return <LoaderHome />
   }
 });
 
 const ErrorLoadable = Loadable({
   loader: () => import('./components/ErrorPage/errorpage'),
   loading() {
-    return <div>Loading...</div>
+    return <LoaderHome />
   }
 });
 class App extends Component {

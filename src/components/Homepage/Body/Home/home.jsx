@@ -5,7 +5,6 @@ import Typist from 'react-typist'
 import { Link } from 'react-router-dom'
 import homeIcon from '../../../../images/home03.png'
 import homeIconMobile from '../../../../images/home03300.png'
-import homeIconTab from '../../../../images/home03500.png'
 
 class Home extends Component {
   scrollToSamples = () => {

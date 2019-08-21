@@ -105,6 +105,10 @@
   .ui.grid.faq-container {
     padding-left: 0;
     padding-right: 0;
+
+    .padded-container {
+      padding: 0 2em;
+    }
   }
 }
 

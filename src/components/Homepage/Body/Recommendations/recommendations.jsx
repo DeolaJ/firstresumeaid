@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
-import { Grid, Header, Container, Icon, Segment, Button, Modal } from 'semantic-ui-react'
+import { Grid, Header, Icon, Segment, Button, Modal } from 'semantic-ui-react'
 import Slider from 'react-slick'
 import './recommendations.scss'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-// import contract from '../../../../images/background/003-contract.svg'
 
 function LeftNav (props) {
     const {style, onClick} = props

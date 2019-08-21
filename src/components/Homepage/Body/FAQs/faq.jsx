@@ -1,10 +1,7 @@
 import React, {Component} from 'react'
-import { Grid, Accordion, Header, Container } from 'semantic-ui-react'
+import { Grid, Accordion, Header } from 'semantic-ui-react'
 import './faq.scss'
 import Fade from 'react-reveal/Fade';
-import faqIcon from '../../../../images/faq.png'
-import faqIconMobile from '../../../../images/faq300.png'
-import faqIconTab from '../../../../images/faq500.png'
 
 class Faq extends Component {
 
@@ -23,7 +20,7 @@ class Faq extends Component {
     return (
       <Grid stackable className={'section faq-container'} style={{minHeight: '100vh'}}>
         <div className={'padded-container'}>
-          <Fade bottom cascade>
+          <Fade>
             <Header as='h2' className={'section-header'} textAlign='center'>
               Frequently Asked Questions
             </Header>

@@ -1,12 +1,8 @@
 import React, {Component} from 'react'
-import { Grid, Container, Header, Segment, Icon, Card, Divider, Statistic, Label, Button } from 'semantic-ui-react'
+import { Grid, Header, Segment, Icon, Card, Divider, Statistic, Label, Button } from 'semantic-ui-react'
 import './packages.scss'
 import Fade from 'react-reveal/Fade';
 import { Link } from 'react-router-dom'
-import Aux from '../../../../hoc/Aux'
-import manIcon from '../../../../images/man.png'
-import manIconMobile from '../../../../images/man300.png'
-import manIconTab from '../../../../images/man500.png'
 import conversation from '../../../../images/icons/007-conversation.svg'
 import guarantee from '../../../../images/icons/011-guarantee.svg'
 import favorites from '../../../../images/icons/001-favorites-button.svg'
@@ -14,28 +10,6 @@ import employment from '../../../../images/icons/015-employment.svg'
 import recruitment from '../../../../images/icons/016-recruitment.svg'
 
 class Packages extends Component {
-
-  // constructor (props) {
-  //   super (props)
-
-  //   this.state = {
-  //     mobile: null
-  //   }
-  // }
-
-  // componentDidMount () {
-  //   const packages = document.querySelector('.packages-container').clientWidth
-
-  //   if (packages <= 768 ) {
-  //     this.setState({
-  //       mobile: true
-  //     })
-  //   } else if (packages > 768) {
-  //     this.setState({
-  //       mobile: false
-  //     })
-  //   }
-  // }
 
   render () {
     const { mobile } = this.props
@@ -45,7 +19,7 @@ class Packages extends Component {
         <svg xmlns="http://www.w3.org/2000/svg" width="1544.32" height="895.82" viewBox="0 0 1544.32 895.82"><title>rocks</title><path d="M736.5,155.5c-61,93-136,132-190,117s-121-121-104-149S796.52,64,736.5,155.5Z" transform="translate(-165.28 -94.68)" fill="#fcf"/><path d="M1674.5,186.5c-22,82-102,197-160,199s-314-35-308-78,36-176,75-170S1696.5,104.5,1674.5,186.5Z" transform="translate(-165.28 -94.68)" fill="#fc9"/><path d="M348.5,953.5c-116.8-111.93,266-220,308-192s71,229,25,229S372.5,976.5,348.5,953.5Z" transform="translate(-165.28 -94.68)" fill="#633"/><path d="M1549.5,888.5c-87-63-58-186,0-212s65-35,138-24S1636.5,951.5,1549.5,888.5Z" transform="translate(-165.28 -94.68)" fill="#336"/><path d="M222.5,414.5c104,58,104,162,104,162s-149,100-160-28S222.5,414.5,222.5,414.5Z" transform="translate(-165.28 -94.68)" fill="#666"/></svg>
         <Grid.Column width={16}>
           <div className={'ui container'}>
-            <Fade bottom cascade>
+            <Fade>
               <Header as='h2' className={'section-header'} textAlign={'center'}>Why Choose Us?</Header>
               {/* <img src={manIconMobile} alt='man thinking' style={{ width: '100%' }} /> */}
               <Segment.Group>
@@ -422,7 +396,7 @@ class Packages extends Component {
               </div>
             </Fade>
 
-            <Fade bottom>
+            <Fade>
               <div className={'pricing-body'}>
                 <Header as='h2' textAlign='left' style={ mobile ? { fontSize: '24px' } : null}>
                   Combo Packages

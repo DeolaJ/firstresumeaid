@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Header, Button, Container } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import './Footer.scss'
 
 class Footer extends Component {
@@ -14,8 +16,19 @@ class Footer extends Component {
 
     return (
       <footer className={'footer'}>
-        <div>
-          &copy; Copyright <span className={'footer-year'}></span> Resume 
+
+        <Container className={'banner'} textAlign={'center'}>
+          <Header as='h2' textAlign='center'>
+            Convinced about our services?
+          </Header>
+          <Link to='/payment'>
+            <Button className={'primary-sub'} size='huge'>
+              Try now
+            </Button>
+          </Link>
+        </Container>
+        <div className={'copyright'}>
+          &copy; Copyright <span className={'footer-year'}></span> First-Resume Aid 
         </div>
       </footer>
     )

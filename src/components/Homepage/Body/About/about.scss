@@ -1,9 +1,8 @@
 @import '../../../../partials/variables';
 
 .about-container {
-  padding-top: 80px !important;
+  padding-top: 100px !important;
   position: relative;
-  padding-bottom: 100px !important;
 
   svg {
     position: absolute;
@@ -11,6 +10,12 @@
     left: -10em;
     padding: 0;
     height: 50%;
+  }
+
+  @media (max-width: 768px) {
+    svg {
+      opacity: .5;
+    }
   }
 
   .about-top-placeholder {
@@ -24,16 +29,18 @@
 
   .column.mobile-only {
     padding: 0 !important;
-    background: white;
+    background: transparent;
 
     .segment {
       margin-bottom: 2em;
     }
   }
 
-  .perks-column {
+  .perks-column.sixteen.wide.column {
     position: relative;
     margin-top: 6em;
+    padding: 0;
+    border-radius: 0;
 
     .perks-container.ui.grid {
       margin: 0;
@@ -70,14 +77,21 @@
         
       .perk-illustration {
         height: 80%;
-        margin-top: 10%;
+        margin-top: 3%;
         width: 83%;
         position: absolute;
         content: '';
         top: 0;
         left: 0;
-        background: no-repeat left top;
+        background: no-repeat center;
         background-size: contain;
+      }
+    }
+
+    @media (max-width: 1024px) {
+
+      .perks-container.ui.grid {
+        padding: 0;
       }
     }
 
@@ -88,7 +102,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
 
       .perk-illustration {
         display: none;
@@ -99,7 +113,7 @@
       }
 
       .eight.wide.column {
-        padding: 0 5em !important;
+        padding: 1em !important;
       }
     }
 

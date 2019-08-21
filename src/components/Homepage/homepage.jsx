@@ -61,7 +61,7 @@ class Homepage extends Component {
     const { navItems } = this.state
     this.createNavRef(navItems)
 
-    const body = document.querySelector('.home-container').clientWidth
+    const body = document.querySelector('body').clientWidth
     window.addEventListener("resize", this.updateValue)
 
     if (body <= 768 ) {
@@ -76,7 +76,7 @@ class Homepage extends Component {
   }
 
   updateValue = () => {
-    const body = document.querySelector('.home-container').clientWidth
+    const body = document.querySelector('body').clientWidth
     const mobile = body <= 768 ? true : false
     this.setState({
       mobile: mobile

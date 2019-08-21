@@ -3,12 +3,10 @@ import { Grid, Container, Header, Segment, Feed, Icon } from 'semantic-ui-react'
 import './about.scss'
 import Fade from 'react-reveal/Fade';
 import Aux from '../../../../hoc/Aux'
-import manIconTab from '../../../../images/man500.png'
+import excited from '../../../../images/faq500.png'
 import contract from '../../../../images/icons/003-contract.svg'
 import insurance from '../../../../images/icons/004-insurance.svg'
 import team from '../../../../images/icons/014-team.svg'
-import wavyFlat from '../../../../images/background/wavy flat.svg'
-
 
 class About extends Component {
   state = {
@@ -79,7 +77,7 @@ class About extends Component {
         <Grid.Column width={1} style={ mobile ? {display: 'none'} : {display: 'block'}}></Grid.Column>
         <Grid.Column width={14} className={'hide-on-mobile'}>
           <Container className={'about-content'}>
-            <Fade bottom cascade>
+            <Fade bottom={!mobile && true} cascade={!mobile && true}>
               <Segment raised padded>
                 <Grid columns={mobile ? 1: 2}>
                   <Grid.Row stretched>
@@ -113,7 +111,7 @@ class About extends Component {
 
         <Grid.Column width={16} className={'mobile-only'}>
           <Container className={'about-content'}>
-            <Fade bottom cascade>
+            <Fade bottom={!mobile && true} cascade={!mobile && true}>
               <Segment basic className={'about-content__header'}>
                 <Header as='h2' textAlign='center'>
                   Who are we?
@@ -139,7 +137,7 @@ class About extends Component {
 
         <Grid.Column width={2}></Grid.Column>
         <Grid.Column width={16}>
-          <Fade left>
+          <Fade left={!mobile && true}>
             <Container className={'random-review'}>
               <Feed size='large' >
                 <Feed.Event>
@@ -169,7 +167,7 @@ class About extends Component {
           <Grid stackable className={'perks-container'}>
             <Grid.Row>
               <Grid.Column width={8}>
-                <div className={'perk-illustration'} style={{ backgroundImage: `url(${manIconTab})`}}></div>
+                <div className={'perk-illustration'} style={{ backgroundImage: `url(${excited})`}}></div>
               </Grid.Column>
               <Grid.Column width={8}>
                 <div>
