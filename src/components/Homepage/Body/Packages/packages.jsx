@@ -449,7 +449,7 @@ class Packages extends Component {
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
                         <Link to='/payment/it-level-combo'>
-                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                          <Button size='large' className={'primary-main'}>Use This Package</Button>
                         </Link>
                       </Card.Content>
                     </Card>
@@ -525,7 +525,7 @@ class Packages extends Component {
                       </Card.Content>
                       <Card.Content textAlign='center' extra>
                         <Link to='/payment/it-level-combo'>
-                          <Button size='large' className={'primary-sub'}>Use This Package</Button>
+                          <Button size='large' className={'primary-main'}>Use This Package</Button>
                         </Link>
                       </Card.Content>
                     </Card>

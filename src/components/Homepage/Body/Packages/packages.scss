@@ -111,6 +111,15 @@
 
       .ui.card {
         position: relative;
+        box-shadow: none;
+        border-radius: 5px;
+        background-color: $color-paint;
+        transition: .4s all ease-in-out;
+
+        &:hover {
+          box-shadow: 0 4px 16px #d0d0d0;
+          transform: translate(0, -10px);
+        }
 
         .ui.statistic>.value, .ui.statistics .statistic>.value  {
           font-family: $font-family-header;
@@ -118,10 +127,11 @@
 
         .ui.statistic .label {
           font-weight: 400;
+          text-transform: lowercase;
         }  
 
         div.header {
-          color: $color-grey; 
+          color: white; 
           line-height: 30px; 
           position: relative;
           font-weight: 400;
@@ -129,23 +139,13 @@
         }
   
         .background-placeholder {
+          border-radius: 5px 5px 0 0;
           height: 60px; 
           width: 100%; 
           top: 0; 
           left: 0; 
           position: absolute;
-  
-          &.red {
-            background-color: $color-paint;
-          }
-  
-          &.orange {
-            background-color: $color-primary;
-          }
-  
-          &.blue {
-            background-color: $color-paint;
-          }
+          background-color: $color-primary;
   
           &.popular {
             height: 100px; 
@@ -157,10 +157,20 @@
             }
           }
         }
+
+        .content {
+          border: none !important;
+
+          p {
+            font-size: 15px;
+            text-align: center;
+          }
+        }
   
         .content.extra {
           padding-top: 2em;
           padding-bottom: 2em;
+          border: none;
         }
       }
     }
@@ -183,6 +193,7 @@
 
         .ui.statistic .label {
           font-weight: 400;
+          text-transform: lowercase;
         }  
   
         .card-header_mobile {
@@ -217,6 +228,11 @@
           border-top: none !important; 
           padding-top: 0em; 
           padding-bottom: 1.5em;
+        }
+
+        .content p {
+          font-size: 15px;
+          text-align: center;
         }
       }
 

@@ -4,6 +4,7 @@ import { Icon, List, Grid, Button } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import Aux from '../../../hoc/Aux'
 import logo from '../../../images/logo/logo-full-small.png'
+import logosmall from '../../../images/logo/logo.png'
 
 class Nav extends Component {
   constructor (props) {
@@ -50,7 +51,7 @@ class Nav extends Component {
       this.setState({
         scrolling: false
       })
-    } else if ((window.scrollY !== 0) && (this.state.scrolling !== true)) {
+    } else if ((window.scrollY > 100) && (this.state.scrolling !== true)) {
       this.setState({
         scrolling: true
       })
@@ -71,15 +72,16 @@ class Nav extends Component {
 
   render () {
     const { navItems, handleSidebar, mobile, navVisible } = this.props
+    const { scrolling } = this.state
 
     return (
-      <nav className={'nav'} style={ !this.state.scrolling ? { position: 'absolute', display: navVisible ? 'block' : 'none' } : { position: 'fixed', boxShadow: '0 1px 2px rgba(0, 0, 0, .3)', display: navVisible ? 'block' : 'none'}}>
+      <nav className={'nav'} style={ !scrolling ? { position: 'absolute', display: navVisible ? 'block' : 'none' } : { position: 'fixed', boxShadow: '0 0 13px #e6e6e6', display: navVisible ? 'block' : 'none'}}>
 
         {
           !mobile ?
           <Aux>
             <div className={'logo'}>
-              <img alt='logo icon' className={'logo-icon'} src={logo} />
+              <img alt='logo icon' className={'logo-icon'} src={scrolling ? logosmall : logo} style={{width: scrolling ? '64px' : '250px'}} />
             </div>
             <List horizontal link className={'navLink'}>
               {
@@ -110,7 +112,7 @@ class Nav extends Component {
               </Grid.Column>
 
               <Grid.Column textAlign='center' verticalAlign='middle' style={{ position: 'relative'}}>
-                <img alt='logo icon' className={'mobile-logo'} src={logo} />
+                <img alt='logo icon' className={'mobile-logo'} src={scrolling ? logosmall : logo} style={{width: scrolling ? '64px' : '250px'}} />
               </Grid.Column>
 
               <Grid.Column textAlign='right'>
