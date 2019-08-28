@@ -73,11 +73,16 @@
       margin-bottom: 0;
     }
 
+    .content {
+      border-top: none;
+    }
+
     .thumbnail {
-      background-color: grey;
-      height: 100px;
+      height: 150px;
       width: 80%;
       margin-left: 10%;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 
@@ -85,6 +90,10 @@
 
     .ui.card.sample-card {
       margin-bottom: 2em;
+
+      .thumbnail {
+        height: 80px;
+      }
 
     }
   }

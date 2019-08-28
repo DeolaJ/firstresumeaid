@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 import Fade from 'react-reveal/Fade';
 import doc from '../../../../docs/test.pdf'
+import docIllustration from '../../../../images/doc-small.svg'
 
 class Samples extends Component {
 
@@ -16,37 +17,37 @@ class Samples extends Component {
       samples: [
         {
           id: 1,
-          image: 'iio',
+          image: docIllustration,
           name: 'Sample 1',
           url: doc
         },
         {
           id: 2,
-          image: 'kkjj',
+          image: docIllustration,
           name: 'Sample 2',
           url: doc
         },
         {
           id: 3,
-          image: 'jjknk',
+          image: docIllustration,
           name: 'Sample 3',
           url: doc
         },
         {
           id: 4,
-          image: 'mmkk',
+          image: docIllustration,
           name: 'Sample 4',
           url: doc
         },
         {
           id: 5,
-          image: 'jj',
+          image: docIllustration,
           name: 'Sample 5',
           url: doc
         },
         {
           id: 6,
-          image: 'jj',
+          image: docIllustration,
           name: 'Sample 6',
           url: doc
         }
@@ -98,9 +99,9 @@ class Samples extends Component {
                       {
                         samples.map(sample => (
                           <Card raised key={sample.id} centered className={'sample-card'}>
-                            <div className={'thumbnail'}></div>
+                            <div className={'thumbnail'} style={{ backgroundImage: `url(${docIllustration})` }}></div>
                             <Card.Content>
-                              <Card.Header as='h3' textAlign='left'>{sample.name}</Card.Header>
+                              <Card.Header as='h3' textAlign='center'>{sample.name}</Card.Header>
                               <br/>
                               {
                                 mobile ?

@@ -178,24 +178,7 @@ class Payment extends PureComponent {
     return (
       <Grid className={'payment-container'}>
 
-        {/* <Step.Group className={'payment-steps unstackable'} style={( stageTwoDesk) ? { transform: 'translateX(-50%)', left: '50%', top: '3em', marginLeft: '-.5em', width: 'calc(100% - 4em)' } : ((stageTwoMobile || mobile )? { width: '100%', transform: 'translateX(-50%)', left: '50%', top: '5.6em' } : null)} widths={3}>
-          <Step active={stageOne} completed={stageTwoDesk || stageTwoMobile}>
-            <Step.Content>
-              <Step.Title>{mobile ? <span>1<br/>Package</span> : '1. Select Package'}</Step.Title>
-            </Step.Content>
-          </Step>
-          <Step active={stageTwoDesk || stageTwoMobile} completed={stageThree}>
-            <Step.Content>
-              <Step.Title>{mobile ? <span>2<br/>Info</span> : '2. Personal Information'}</Step.Title>
-            </Step.Content>
-          </Step>
-          <Step active={stageThree}>
-            <Step.Content>
-              <Step.Title>{mobile ? <span>3<br/>Pay</span> : '3. Pay'}</Step.Title>
-            </Step.Content>
-          </Step>
-        </Step.Group> */}
-        <div className={'step-count'} style={( stageTwoDesk) ? { transform: 'translateX(-50%)', left: '50%', top: '2em', marginLeft: '-.5em', width: 'calc(100% - 30em)' } : ((stageTwoMobile || mobile )? { width: '100%', transform: 'translateX(-50%)', left: '50%', top: '4.5em' } : null)}>
+        <div className={'step-count'} style={( stageTwoDesk) ? { right: '2em', top: '2em', width: 'calc(50% - 3em)', color: '#444' } : ((stageTwoMobile) ? { width: '100%', transform: 'translateX(-50%)', left: '50%', top: '5.5em', color: '#444' } : null)}>
           <div className={stageOne ? 'active' : ((stageTwoDesk || stageTwoMobile) ? 'completed' : null )}>
             {mobile ? 'Package' : 'Select Package'}
           </div>
@@ -212,7 +195,9 @@ class Payment extends PureComponent {
           <Grid.Column width={16} className={'stageone-row'}>
             <div className={'return-link'}>
               <Link to='/'>
-                <Icon name='chevron left' /> Return to Home
+                <Button className={'primary-sub'}>
+                  <Icon name='chevron left' /> Return to Home
+                </Button>
               </Link>
             </div>
             <Container className={'first-stage'}>

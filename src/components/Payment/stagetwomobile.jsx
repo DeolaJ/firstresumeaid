@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Grid, Container, Header, Icon } from 'semantic-ui-react'
+import { Grid, Container, Header, Icon, Button } from 'semantic-ui-react'
 import CheckoutForm from './form'
 
 class StageTwoDesk extends Component {
@@ -47,9 +47,9 @@ class StageTwoDesk extends Component {
           <Grid.Row columns={2}>
             <Grid.Column textAlign='left' verticalAlign='middle'>
               <div className={'cancel-request-mobile'}>
-                <span onClick={prevStage}>
+                <Button className={'primary-sub'} onClick={prevStage}>
                   <Icon name='chevron left' />Cancel Request
-                </span>
+                </Button>
               </div>
             </Grid.Column>
 

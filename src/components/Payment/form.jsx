@@ -285,7 +285,7 @@ class CheckoutForm extends Component {
               <label>Enter Coupon (If available)</label>
               <div style={{ display: 'flex'}}>
                 <input placeholder='Enter your code' name="code" value={code} onChange={this.handleChange}/>
-                <Button style={{ marginLeft: '1em' }} onClick={this.changePrice}>Validate</Button>
+                <Button className={'primary-sub'} style={{ marginLeft: '1em' }} onClick={this.changePrice}>Validate</Button>
               </div>
             </Form.Field>
 
@@ -309,6 +309,7 @@ class CheckoutForm extends Component {
                 onUploadError={this.handleUploadError}
                 onUploadSuccess={this.handleUploadSuccess}
                 onProgress={this.handleProgress}
+                className={'primary-sub'}
               />
               {
 
