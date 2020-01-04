@@ -42,7 +42,6 @@
       p {
         line-height: 24px;
         font-size: 16px;
-        color: #777;
       }
 
       .package-icon {
@@ -112,7 +111,7 @@
       .ui.card {
         position: relative;
         box-shadow: none;
-        border-radius: 5px;
+        border-radius: 1rem;
         background-color: $color-paint;
         transition: .4s all ease-in-out;
 
@@ -130,8 +129,17 @@
           text-transform: lowercase;
         }  
 
+        .center.aligned.content {
+          margin-top: 1rem;
+
+          .ui.statistic .value {
+            font-size: 40px !important;
+          }
+        }
+
         div.header {
           color: white; 
+          margin-top: 2px;
           line-height: 30px; 
           position: relative;
           font-weight: 400;
@@ -139,7 +147,7 @@
         }
   
         .background-placeholder {
-          border-radius: 5px 5px 0 0;
+          border-radius: 1rem 1rem 0 0 !important;
           height: 60px; 
           width: 100%; 
           top: 0; 
@@ -168,7 +176,7 @@
         }
   
         .content.extra {
-          padding-top: 2em;
+          padding-top: 0;
           padding-bottom: 2em;
           border: none;
         }
@@ -179,7 +187,7 @@
 
       .ui.card {
         position: relative;
-        border-radius: 5px; 
+        border-radius: 1rem; 
         background-color: lightblue;
         max-width: 100%;
         margin-bottom: 2em;
@@ -201,7 +209,7 @@
           border: 2px solid white; 
           width: 70%; 
           margin: 1.5em auto 0; 
-          border-radius: 5px !important; 
+          border-radius: 1rem !important; 
           border-top: 2px solid white !important;
         }
 

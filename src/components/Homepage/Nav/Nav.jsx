@@ -81,7 +81,7 @@ class Nav extends Component {
           !mobile ?
           <Aux>
             <div className={'logo'}>
-              <img alt='logo icon' className={'logo-icon'} src={scrolling ? logosmall : logo} style={{width: scrolling ? '64px' : '250px'}} />
+              <img alt='logo icon' className={'logo-icon'} src={scrolling ? logosmall : logo} style={{width: scrolling ? '52px' : '250px', marginTop: !scrolling && '-3.5rem'}} />
             </div>
             <List horizontal link className={'navLink'}>
               {

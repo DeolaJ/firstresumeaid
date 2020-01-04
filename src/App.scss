@@ -5,6 +5,10 @@
   *:not(.icon) {
     font-family: 'Asap', 'Lato', sans-serif !important;
 
+    p {
+      color: #444;
+    }
+
     h1, h2, h3, h4, h5, h6, .ui.header,
     .header {
       font-family: 'Asap Condensed', 'Lato', sans-serif !important;
@@ -18,7 +22,7 @@
 
       h1.header {
         line-height: 1.1em;
-        font-size: 57px;
+        font-size: 50px;
         margin-top: 0;
         margin-bottom: 20px;
         font-weight: 400;
@@ -57,8 +61,8 @@
   }
 
   .mainbody p {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 30px;
   }
 
   @media (min-width: 769px) {
