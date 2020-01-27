@@ -4,7 +4,7 @@ import './samples.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
 import Fade from 'react-reveal/Fade';
-import doc from '../../../../docs/test.pdf'
+// import doc from '../../../../docs/test.pdf'
 import docIllustration from '../../../../images/doc-small.svg'
 
 class Samples extends Component {
@@ -19,37 +19,37 @@ class Samples extends Component {
           id: 1,
           image: docIllustration,
           name: 'Sample 1',
-          url: doc
+          // url: doc
         },
         {
           id: 2,
           image: docIllustration,
           name: 'Sample 2',
-          url: doc
+          // url: doc
         },
         {
           id: 3,
           image: docIllustration,
           name: 'Sample 3',
-          url: doc
+          // url: doc
         },
         {
           id: 4,
           image: docIllustration,
           name: 'Sample 4',
-          url: doc
+          // url: doc
         },
         {
           id: 5,
           image: docIllustration,
           name: 'Sample 5',
-          url: doc
+          // url: doc
         },
         {
           id: 6,
           image: docIllustration,
           name: 'Sample 6',
-          url: doc
+          // url: doc
         }
       ]
     }
@@ -106,13 +106,13 @@ class Samples extends Component {
                               {
                                 mobile ?
 
-                                <a href={sample.url} target="_blank" rel="noopener noreferrer" disabled={mobile ? false : true}>
+                                <a href='/' target="_blank" rel="noopener noreferrer" disabled={mobile ? false : true}>
                                   <Button fluid color='blue' className={'primary-sub'}>Preview</Button>
                                 </a>
 
                                 :
 
-                                <Button fluid color='blue' className={'primary-sub'} onClick={this.handleOpen(sample.url)}>Preview</Button>
+                                <Button fluid color='blue' className={'primary-sub'}>Preview</Button>
                               }
                               
                             </Card.Content>
