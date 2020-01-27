@@ -19,7 +19,7 @@ function LeftNav (props) {
 }
 
 function RightNav (props) {
-  const {style, onClick} = props
+  const {style, onClick} = props 
   return (
       <div
           className="slick-arrow right-arrow"
